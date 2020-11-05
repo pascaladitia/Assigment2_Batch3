@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="11dp"
                 android:layout_toRightOf="@+id/weight"
-                android:text="0m"
+                android:text="0cm"
                 android:textColor="#2196F3"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -113,6 +113,34 @@
                 android:outlineSpotShadowColor="#03A9F4"
                 android:outlineAmbientShadowColor="#03A9F4"
                 android:max="200" />
+
+            <CheckBox
+                android:id="@+id/male_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/weightSeekbar"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:buttonTint="#03A9F4"
+                android:textColor="#03A9F4"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Male"/>
+
+            <CheckBox
+                android:id="@+id/female_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/male_checkbox"
+                android:layout_below="@+id/weightSeekbar"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:buttonTint="#03A9F4"
+                android:textColor="#03A9F4"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Female"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -145,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/bmiText"
-                android:text="25"
+                android:text="0"
                 android:layout_marginLeft="10dp"
                 android:textColor="#2196F3"
                 android:textSize="30sp"

@@ -2,13 +2,13 @@ package com.example.assigment2.view.calculator
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.SeekBar
+import android.view.View
+import android.widget.*
 import android.widget.SeekBar.OnSeekBarChangeListener
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.assigment2.R
 import com.example.assigment2.view.main.DashboardActivity
+import kotlinx.android.synthetic.main.activity_calculator.*
 import java.lang.String
 
 
@@ -93,10 +93,27 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
     private fun calculateBmi(weight: Float, height: Float): kotlin.String {
-        val heightValue = height / 100
+        if (male_checkbox.isChecked) {
+            male(weight, height)
+        } else if (female_checkbox.isChecked) {
+            female(weight, height)
+        } else if (male_checkbox.isChecked && female_checkbox.isChecked) {
+            Toast.makeText(applicationContext, "Pilih Satu Gender", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(applicationContext, "Masukan Gender", Toast.LENGTH_SHORT).show()
+        }
 
-        bmiResult = weight / (heightValue * heightValue)
         return bmiResult.toString()
 }
+
+    private fun male(weight: Float, height: Float) {
+        val heightValue = height / 100
+        bmiResult = weight / (heightValue * heightValue)
+    }
+
+    private fun female(weight: Float, height: Float) {
+        val heightValue = height - 100
+        bmiResult = (heightValue*90) / 100
+    }
 }
 
